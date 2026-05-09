@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Panel de Gestión de Usuarios</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Registro de Usuario</h5>
+                    <form id="formUsuario">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="Ej: Juan">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Edad</label>
+                            <input type="number" id="edad" class="form-control" placeholder="Mayor a 0">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Rol</label>
+                            <select id="rol" class="form-select">
+                                <option value="Usuario">Usuario</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+                        <button type="button" id="btnAgregar" class="btn btn-primary w-100">Agregar Usuario</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-3 bg-white border rounded shadow-sm">
+                <h6>Resumen de Estados:</h6>
+                <p id="stats" class="small mb-0 text-muted">Cargando estadísticas...</p>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="d-flex justify-content-between mb-3">
+                <select id="filtroRol" class="form-select w-50">
+                    <option value="Todos">Todos los Roles</option>
+                    <option value="Administrador">Solo Administradores</option>
+                    <option value="Usuario">Solo Usuarios</option>
+                </select>
+                <button id="btnOrdenar" class="btn btn-outline-secondary btn-sm">Ordenar por Edad</button>
+            </div>
+
+            <div class="table-responsive bg-white shadow-sm rounded">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaUsuarios">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/bootstraps.bundle.min.js"></script>
+<script src="funciones.js"></script>
+</body>
+</html>
