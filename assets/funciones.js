@@ -60,7 +60,7 @@ function agregarUsuario() {
     document.getElementById('formUsuario').reset();
 
     // Actualiza la tabla de usuarios y las estadísticas
-    mostrarUsuarios();
+    filtrarUsuarios();
     actualizarEstadisticas();
 
     console.log('Usuario agregado:', usuario);
@@ -155,7 +155,7 @@ function cambiarEstado(id) {
     
     if (usuario) {
         usuario.estado = usuario.estado === 'Activo' ? 'Inactivo' : 'Activo';
-        mostrarUsuarios();
+        filtrarUsuarios();
         actualizarEstadisticas();
         console.log('Estado cambió para:', usuario.nombre);
     }
@@ -166,7 +166,7 @@ function cambiarEstado(id) {
 function eliminarUsuario(id) {
     if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
         usuarios = usuarios.filter(u => u.id !== id);
-        mostrarUsuarios();
+        filtrarUsuarios();
         actualizarEstadisticas();
         console.log('Usuario eliminado');
     }
@@ -183,7 +183,7 @@ function ordenarPorEdad() {
         usuarios.sort((a, b) => b.edad - a.edad);
     }
 
-    mostrarUsuarios();
+    filtrarUsuarios();
     
     // Cambiar texto del botón
     const btn = document.getElementById('btnOrdenar');
