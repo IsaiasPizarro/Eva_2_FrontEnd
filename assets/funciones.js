@@ -24,7 +24,7 @@ function validarFormulario() {
         return false;
     }
 
-    // Validar edad de activdad lavoral entre 18 y 75 años
+    // Validar edad de activdad lavoral entre 0 y 150 años 
     if (isNaN(edad) || edad <= 0 || edad > 150) {
         alert('La edad debe ser un número entre 1 y 150');
         return false;
@@ -97,7 +97,6 @@ function mostrarUsuarios() {
                 <button class="btn btn-sm btn-danger" onclick="eliminarUsuario(${usuario.id})">
                     Eliminar
                 </button> 
-                // Botones para cambiar estado y eliminar usuario, con clases de Bootstrap para estilos y eventos onclick que llaman a las funciones correspondientes pasando el ID del usuario
             </td>
         `;
 
